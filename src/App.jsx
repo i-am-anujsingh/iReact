@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import InputBox from './myCompos/InputBox.jsx'
 import useCurrencyInfo from './hooks/useCurrencyInfo.js'
+import {getImageUrl} from '../utilities/utils.js'
 
 function App() {
   
@@ -25,12 +26,11 @@ function App() {
   const convert = () => {
     setConvertedAmount((amount * currencyInfo[to]).toFixed(2))
   }
-  
   return (
      <div
         className="w-full h-screen flex flex-wrap justify-center items-top bg-cover bg-no-repeat"
         style={{
-            backgroundImage: `url('https://images.pexels.com/photos/10864024/pexels-photo-10864024.jpeg')`,
+            backgroundImage: `url(${getImageUrl(10864024)})`,
         }}
     >
     <h1 className="pt-5 text-5xl text-white font-extrabold underline"><center>Currency Converter</center>
